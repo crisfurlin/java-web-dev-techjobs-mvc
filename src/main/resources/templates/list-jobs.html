@@ -6,39 +6,7 @@
 
 <div th:replace="fragments :: page-header"></div>
 
-<div class="container body-content">
-
-    <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
-
-    <!-- TODO #1 - Use a loop to display job results in a table. -->
-    <table class="job-listing" th:each="job : ${jobs}">
-        <tr>
-            <td style="text-align:right">ID</td>
-            <td th:text="${job.id}"/>
-        </tr>
-        <tr>
-            <td style="text-align:right">Name</td>
-            <td th:text="${job.name}"/>
-        </tr>
-        <tr>
-            <td style="text-align:right">Employer</td>
-            <td th:text="${job.employer.value}"/>
-        </tr>
-        <tr>
-            <td style="text-align:right">Location</td>
-            <td th:text="${job.location.value}"/>
-        </tr>
-        <tr>
-            <td style="text-align:right">Position Type</td>
-            <td th:text="${job.positionType.value}"/>
-        </tr>
-        <tr>
-            <td style="text-align:right">Skill</td>
-            <td th:text="${job.coreCompetency.value}"/>
-        </tr>
-    </table>
-
-</div>
+<div th:replace="fragments :: tableTemplate"></div>
 
 </body>
 </html>
